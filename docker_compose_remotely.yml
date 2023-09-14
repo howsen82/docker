@@ -1,0 +1,16 @@
+version: '3.9'
+
+services:
+  remotely:
+    container_name: remotely
+    image: immybot/remotely:latest
+    ports:
+      - 8188:5000
+    volumes:
+      - '/var/www/remotely:/remotely-data'
+    restart: unless-stopped
+
+networks:
+  default:
+    name: my-main-net
+    external: true
